@@ -1,0 +1,1 @@
+docker build -t gunter04/kymamongo:latest -f Dockerfile .

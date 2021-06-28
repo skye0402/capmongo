@@ -1,0 +1,31 @@
+{
+  "name": "cap-kyma-mongo",
+  "version": "1.0.0",
+  "description": "A MongoDB connect project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": "^8.9"
+  },
+  "dependencies": {
+    "@sap/cds": "^4",
+    "express": "^4",
+    "mongodb": "^3.6.9",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.7.2"
+  },
+  "devDependencies": {
+    "sqlite3": "5.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "cds build/all --clean"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite"
+      }
+    }
+  }
+}

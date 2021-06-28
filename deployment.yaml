@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-odata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb-odata
+  template:
+    metadata:
+      labels:
+        app: mongodb-odata
+        version: v1
+    spec:
+      containers:
+      - name: mongodb-odata
+        image: gunter04/kymamongo:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: 32Mi
+        ports:
+        - containerPort: 4004
+          name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-odata
+  labels:
+    app: mongodb-odata
+spec:
+  ports:
+  - port: 4004
+    name: http
+    targetPort: 4004
+  selector:
+    app: mongodb-odata

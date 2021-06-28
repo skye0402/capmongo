@@ -1,0 +1,4 @@
+node_modules
+npm-debug.log
+default-env*.json
+workspace.code-workspace

@@ -1,0 +1,1 @@
+docker run -d -p 4004:4004 gunter04/kymamongo:latest
